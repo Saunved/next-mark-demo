@@ -1,4 +1,4 @@
-const baseConfig = {
+const blogConfig = {
     seo: {
         openGraph: {
             type: "website",
@@ -17,6 +17,7 @@ const baseConfig = {
     localUrl: "http://localhost:3000",
     siteHeader: "Saunved",
     copyRight: "Saunved M. All Rights Reserved.",
+    author: "Saunved",
     footer: {
         social: [
             {
@@ -48,13 +49,23 @@ const baseConfig = {
             },
         ]
     },
-    buttonDownLink: "https://buttondown.email/api/emails/embed-subscribe/saunved"
+    buttonDownLink: "https://buttondown.email/api/emails/embed-subscribe/saunved",
+    tags: {
+        "other-access": {
+            title: "Other Access",
+            description: "A young man has three days left to find a purpose or end up on death row."
+        },
+        "seychelles": {
+            title: "Adventures in Seychelles",
+            description: "A slightly fictionalized recounting of my childhood in Seychelles."
+        }
+    }
 }
 
 if (typeof exports === "object") {
     module.exports = {
-        ...baseConfig
+        ...blogConfig
     }
 }
 
-export default baseConfig;
+export default blogConfig;
