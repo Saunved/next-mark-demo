@@ -31,11 +31,12 @@ Feel free to create an issue if something's confusing and I will try to help you
 - [x] Add support for image captions
 - [x] Support alias/aliases frontmatter key for redirects
 - [x] Create better-looking index pages if possible [low priority]
-- [x] Do an accessibility audit
+- [x] Do an accessibility audit - 100 on PageSpeedInsights
 - [ ] Add the ability to sort by "order"
 - [ ] Add support for RSS feed
 - [ ] Generate sitemap
 - [ ] Support YouTube embeds
+- [ ] Default cover image logic should ignore embeds
 - [ ] Make feed type configurable (feed.type) 
 - [ ] Process blog config via yaml
 - [ ] Setup email collector config via yaml
