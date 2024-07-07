@@ -13,7 +13,7 @@ import { getMdxContent } from '../lib/md.mjs';
 export async function getStaticPaths() {
     const filePaths = await getAllFileNames();
     let paths = filePaths
-        .filter(isPostPublic)
+        .filter((path) => isPostPublic(path))
         .map((filename) => {
             const slug = filename.replace(/\.md$/, '').split("/");
             return { params: { slug } };
@@ -54,7 +54,6 @@ export async function getStaticProps({ params }) {
             if (mdxContent.frontmatter?.feed?.enabled === undefined) {
                 mdxContent.frontmatter.feed.enabled = true;
             }
-
         } catch (error) {
             // Do nothing
         }
@@ -120,7 +119,7 @@ function PostPage({ post, frontmatter, relatedPosts, nestedPosts = [], mdxDirs =
             }
 
             {
-                !nestedPosts.length || !frontmatter.feed.enabled ? null :
+                !nestedPosts.length || !frontmatter?.feed?.enabled ? null :
                     <section id={frontmatter.slug} className='mb-8'>
                         <GenericPostFeed postsMeta={nestedPosts} title={frontmatter?.feed?.title || frontmatter.title || frontmatter.slug} feedDescription={frontmatter?.feed?.description ?? frontmatter.description} feedType={feedTypes.imageList} />
                     </section>
