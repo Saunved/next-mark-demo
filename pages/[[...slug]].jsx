@@ -7,14 +7,17 @@ import GenericPostFeed from 'components/GenericPostFeed';
 import feedTypes from 'constants/feedTypes';
 import Link from 'next/link';
 import SectionTitle from 'components/SectionTitle';
+import { isPostPublic } from 'helpers/draft.mjs';
 import { getMdxContent } from '../lib/md.mjs';
 
 export async function getStaticPaths() {
     const filePaths = await getAllFileNames();
-    let paths = filePaths.map((filename) => {
-        const slug = filename.replace(/\.md$/, '').split("/");
-        return { params: { slug } };
-    });
+    let paths = filePaths
+        .filter(isPostPublic)
+        .map((filename) => {
+            const slug = filename.replace(/\.md$/, '').split("/");
+            return { params: { slug } };
+        });
 
     const dirs = (await getAllDirs()).map(dir => ({ params: { slug: dir.split("/") } }))
     paths = paths.concat(dirs).concat({ params: { slug: [] } }) // The empty array is added to catch the home page.
