@@ -43,11 +43,11 @@ function SideImagePreview({ postMeta }) {
                                 {ellipsisTitle}
                             </h3>
                             <p className="mt-1">{ellipsisDescription}</p>
-                            {/* {
+                            {
                                 !date || date === "undefined" ? null :
                                     <p className="text-sm dark:text-gray-400 text-gray-600 mt-2">{formatDate(date, "dd MMM, yyyy")}</p>
 
-                            } */}
+                            }
                         </div>
                     </div>
                     {

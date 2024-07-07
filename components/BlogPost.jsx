@@ -65,7 +65,6 @@ export default function BlogPost({ relatedPosts = [], meta, isIndex = false, chi
           // eslint-disable-next-line react/prop-types
           !relatedPosts?.length ? null :
             <section>
-              {/* <SectionTitle>Related posts</SectionTitle> */}
               <GenericPostFeed feedType={feedTypes.simpleList} title="Related posts" postsMeta={relatedPosts} />
             </section>
         }
