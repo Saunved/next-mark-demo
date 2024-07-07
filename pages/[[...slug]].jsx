@@ -7,7 +7,7 @@ import GenericPostFeed from 'components/GenericPostFeed';
 import feedTypes from 'constants/feedTypes';
 import Link from 'next/link';
 import SectionTitle from 'components/SectionTitle';
-import { isPostPublic } from 'helpers/draft.mjs';
+import { isPostPublic } from '../helpers/draft.mjs';
 import { getMdxContent } from '../lib/md.mjs';
 
 export async function getStaticPaths() {
