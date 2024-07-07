@@ -44,7 +44,7 @@ function SideImagePreview({ postMeta }) {
                             </h3>
                             <p className="mt-1">{ellipsisDescription}</p>
                             {
-                                !date ? null :
+                                !date || date === "undefined" ? null :
                                     <p className="text-sm dark:text-gray-400 text-gray-600 mt-2">{formatDate(date, "dd MMM, yyyy")}</p>
 
                             }

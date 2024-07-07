@@ -39,8 +39,8 @@ export default function BlogPost({ relatedPosts = [], meta, isIndex = false, chi
             <div className="mb-8">
               <h1 className="text-4xl font-bold">{meta.title}</h1>
               <p className="text-gray-600 dark:text-gray-300 mt-2">
-                {!meta.author ? null : <>{meta.author} &bull; </>}
-                {!meta.date ? null : <> {humanReadableDate(meta.date)}</>}
+                {!meta.author || meta.author === "undefined" ? null : <>{meta.author} &bull; </>}
+                {!meta.date || meta.date === "undefined" ? null : <> {humanReadableDate(meta.date)}</>}
               </p>
               {
                 !meta.image ? null : <figure> <Image
