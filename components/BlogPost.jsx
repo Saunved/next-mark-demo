@@ -3,7 +3,7 @@ import PropTypes from "prop-types";
 import Image from "next/image";
 import { NextSeo } from "next-seo";
 import { meta as metaPropType } from "constants/propTypes";
-import { humanReadableDate } from "utils/date";
+import { formatDate } from "date-fns";
 import blogConfig from "blog.config.mjs";
 import feedTypes from "constants/feedTypes";
 import GenericPostFeed from "./GenericPostFeed";
@@ -40,7 +40,7 @@ export default function BlogPost({ relatedPosts = [], meta, isIndex = false, chi
               <h1 className="text-4xl font-bold">{meta.title}</h1>
               <p className="text-gray-600 dark:text-gray-300 mt-2">
                 {!meta.author || meta.author === "undefined" ? null : <>{meta.author} &bull; </>}
-                {!meta.date || meta.date === "undefined" ? null : <> {humanReadableDate(meta.date)}</>}
+                {!meta.date || meta.date === "undefined" ? null : <> {formatDate(meta.date, "dd MMM, yyyy")}</>}
               </p>
               {
                 !meta.image ? null : <figure> <Image

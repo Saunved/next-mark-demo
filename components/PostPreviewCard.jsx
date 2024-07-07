@@ -4,7 +4,7 @@ import Link from "next/link";
 import { ArrowRight } from "phosphor-react";
 import PropTypes from "prop-types";
 import { meta } from "constants/propTypes";
-import { humanReadableDate } from "utils/date";
+import { formatDate } from "date-fns";
 
 function PostPreviewCard({ postMeta, cardType }) {
   const { slug, title, description, date, image, alt, parts } =
@@ -32,7 +32,7 @@ function PostPreviewCard({ postMeta, cardType }) {
             </h3>
             <p className="text-xs text-gray-600 dark:text-gray-300">
               {!typeIsCollection ? (
-                humanReadableDate(date)
+                formatDate(date, "dd MMM, yyyy")
               ) : (
                 <>
                   {parts} part{parts > 1 ? "s" : ""}
