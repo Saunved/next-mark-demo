@@ -81,12 +81,11 @@ export async function getStaticProps({ params }) {
             }
         }));
 
-
         return {
             props: {
                 post: mdxContent.post,
                 frontmatter: mdxContent.frontmatter,
-                relatedPosts: [],
+                relatedPosts: [], 
                 nestedPosts,
                 mdxDirs,
                 isIndex: true
@@ -110,13 +109,10 @@ function PostPage({ post, frontmatter, relatedPosts, nestedPosts = [], mdxDirs =
 
     return (
         <>
-            {
-                !post ? null :
-                    <BlogPost relatedPosts={relatedPosts} meta={{ ...frontmatter, author: frontmatter?.author }} isIndex={isIndex}>
-                        {/* eslint-disable-next-line react/no-danger */}
-                        <div dangerouslySetInnerHTML={{ __html: post }} />
-                    </BlogPost>
-            }
+            <BlogPost relatedPosts={relatedPosts} meta={{ ...frontmatter, author: frontmatter?.author }} isIndex={isIndex}>
+                {/* eslint-disable-next-line react/no-danger */}
+                <div dangerouslySetInnerHTML={{ __html: post }} />
+            </BlogPost>
 
             {
                 !nestedPosts.length || !frontmatter?.feed?.enabled ? null :
