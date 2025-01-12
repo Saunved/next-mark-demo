@@ -31,6 +31,7 @@ git remote add origin git@github.com:Saunved/next-mark.git
 
 ```sh
 # To sync upstream changes
+git fetch upstream
 git merge upstream/main --allow-unrelated-histories
 
 # Then push to your main branch
