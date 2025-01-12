@@ -17,6 +17,34 @@ All images referenced in Markdown files must be placed in the "content/assets" f
 You can refer to the images in your Markdown using the full path, viz. "assets/xyz.jpg" or relative path,
 viz. "xyz.jpg". next-mark will resolve both correctly.
 
+## Managing upstream
+
+The rendering logic of this framework is present in the next-mark repository.
+In order to sync the rendering logic, ensure that this repository is set as your "remote" repo after forking.
+
+```sh
+# Check your current remote
+git remote -v
+```
+
+```sh
+# Set the remote to this repo
+git remote add origin git@github.com:Saunved/next-mark.git
+```
+
+```sh
+# To check if there are upstream changes
+git fetch upstream
+```
+
+```sh
+# To sync upstream changes
+git merge upstream/main --allow-unrelated-histories
+
+# Then push to your main branch
+```
+
+
 
 ## TODO
 
