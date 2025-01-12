@@ -55,7 +55,7 @@ By default, index pages will show content in the following order:
 The following frontmatter properties are supported by the framework:
 
 ### alias
-The alternate path for this post (full path must be specified, but do not specify protocal or domain).
+The alternate path for this post (full path must be specified, but do not specify protocol or domain).
 
 ### aliases
 Same as alias, but supports multiple links as a YAML list.
