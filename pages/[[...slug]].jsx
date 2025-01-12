@@ -61,7 +61,7 @@ export async function getStaticProps({ params }) {
         const countSlashes = (str) => (str.match(/\//g) || []).length
 
         const nestedDirs = (await getAllDirs(slug)).filter((dir) => !slug ? countSlashes(slug) === countSlashes(dir) : dir)
-            .filter(dir => !dir.includes("assets") && !dir.includes(".obsidian") && !dir.includes(".trash") && dir[0] !== "_")
+            .filter(dir => !dir.includes("assets") && dir[0] !== "_" && dir[0] !== ".")
 
         // This filter is quite convoluted, but it works for now, so not changing it
         // If the index page has a tag filter, respect it

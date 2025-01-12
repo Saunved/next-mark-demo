@@ -1,14 +1,22 @@
-## Welcome to my blog!
+# Welcome to next-mark
 
-Welcome to my blog! You can find most of my writings here. If you want to create your own website using this one as a template, I am still working on making it more intuitive overall.
+next-mark is a blogging framework built on top of Next.js, and is intended to be self-hosted.
 
-Feel free to create an issue if something's confusing and I will try to help you out.
+THIS README IS STILL A WORK IN PROGRESS!
 
+# Basics
+next-mark currently only supports Markdown. All Markdown files should be added to the "content" folder.
 
-## Details about this project
-- Most of this was coded during the Christmas vacation of 2022
-- Using Next.js + MDX
-- I've tried to keep the codebase as modular as possible - PRs are welcome
+## Structure
+You can create as many folders as you want in the "content" directory for organizing your writing.
+An index.md file may be placed at the root of each folder. This file governs how the page will be rendered,
+and how posts will be shown on that page, via the front-matter YAML.
+
+## Images
+All images referenced in Markdown files must be placed in the "content/assets" folder.
+You can refer to the images in your Markdown using the full path, viz. "assets/xyz.jpg" or relative path,
+viz. "xyz.jpg". next-mark will resolve both correctly.
+
 
 ## TODO
 
@@ -32,6 +40,7 @@ Feel free to create an issue if something's confusing and I will try to help you
 - [x] Support alias/aliases frontmatter key for redirects
 - [x] Create better-looking index pages if possible [low priority]
 - [x] Do an accessibility audit - 100 on PageSpeedInsights
+- [ ] Non-image paths (audio/pdf) in assets folder may not get resolved correctly (needs testing)
 - [ ] Add the ability to sort by "order"
 - [ ] Add support for RSS feed
 - [ ] Generate sitemap
