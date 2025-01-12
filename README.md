@@ -2,7 +2,7 @@ Caution: THIS README IS STILL A WORK IN PROGRESS!
 
 # Welcome to next-mark (alpha)
 
-next-mark (alpha) is a blogging framework built on top of Next.js, and is intended to be self-hosted.
+next-mark (alpha) is a static site generator built on top of Next.js, and is intended to be self-hosted.
 I extracted the core logic of next-mark from my Next.js setup to help others blog more easily.
 However, there is a lot more that needs to be done to ensure that you don't have to tinker with next-mark's
 internals in order to have your site up and running. Feel free to open a PR to help us get to that goal!
