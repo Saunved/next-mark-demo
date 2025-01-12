@@ -1,27 +1,24 @@
-# Welcome to next-mark
+Caution: THIS README IS STILL A WORK IN PROGRESS!
 
-next-mark is a blogging framework built on top of Next.js, and is intended to be self-hosted.
+# Welcome to next-mark (alpha)
 
-THIS README IS STILL A WORK IN PROGRESS!
+next-mark (alpha) is a blogging framework built on top of Next.js, and is intended to be self-hosted.
+I extracted the core logic of next-mark from my Next.js setup to help others blog more easily.
+However, there is a lot more that needs to be done to ensure that you don't have to tinker with next-mark's
+internals in order to have your site up and running. Feel free to open a PR to help us get to that goal!
 
-# Basics
-next-mark currently only supports Markdown. All Markdown files should be added to the "content" folder.
+# Setup
 
-## Structure
-You can create as many folders as you want in the "content" directory for organizing your writing.
-An index.md file may be placed at the root of each folder. This file governs how the page will be rendered,
-and how posts will be shown on that page, via the front-matter YAML.
+1. Clone this repository
+2. Add your content (Markdown files) to a "content" folder at the root of this repository
+3. Update blog.config.mjs as per your needs
+4. Update next.config.mjs to set the base URL (you might need to create a .env.production) file at the root level
+5. Set the upstream to this repository to ensure that you pull rendering logic (instructions below)
+6. Connect your site to Vercel via GitHub/GitLab, etc.
+7. Link your own domain and deploy
 
-## Images
-All images referenced in Markdown files must be placed in the "content/assets" folder.
-You can refer to the images in your Markdown using the full path, viz. "assets/xyz.jpg" or relative path,
-viz. "xyz.jpg". next-mark will resolve both correctly.
 
-## Managing upstream
-
-The rendering logic of this framework is present in the next-mark repository.
-In order to sync the rendering logic, ensure that this repository is set as your "remote" repo after forking.
-
+## Setting next-mark as the remote upstream
 ```sh
 # Check your current remote
 git remote -v
@@ -33,23 +30,114 @@ git remote add origin git@github.com:Saunved/next-mark.git
 ```
 
 ```sh
-# To check if there are upstream changes
-git fetch upstream
-```
-
-```sh
 # To sync upstream changes
 git merge upstream/main --allow-unrelated-histories
 
 # Then push to your main branch
 ```
 
+# Basics
+next-mark currently only supports Markdown. All Markdown files should be added to a "content" folder in the root
+directory of this project.
 
+## Structure
+You can create as many folders as you want in the "content" directory for organizing your writing.
+An index.md file may be placed at the root of each folder. This file governs how the page will be rendered,
+and how posts will be shown on that page, via the front-matter YAML.
 
-## TODO
+By default, index pages will show content in the following order:
+1. The content on that page
+2. The default feed OR a filtered feed based on options you have specified in the "feed" property
+3. Folders present at the same level as this index.md, options configurable via a "explorer" property
+
+## All frontmatter properties
+The following frontmatter properties are supported by the framework:
+
+### alias
+The alternate path for this post (full path must be specified, but do not specify protocal or domain).
+
+### aliases
+Same as alias, but supports multiple links as a YAML list.
+
+### alt
+The alt attribute of the hero image (for accessibility)
+
+### author
+The author of the page
+
+### canonical
+The canonical URL of the post (if this post was published elsewhere first and is the actual source of truth).
+
+### credit
+The attribution for the hero image
+
+### date
+The date on which the post was published
+
+### description
+The description
+
+### explorer
+The "explorer" property
+
+```yaml
+explorer:
+  title: Data science
+  description: Explore all my posts on data science
+```
+
+### feed
+The "feed" property in an index page's frontmatter defines what "feed" will be shown on that page.
+
+Example feed property:
+```yaml
+feed:
+  filter: featured
+  title: Featured posts
+  description: ""
+```
+^ This will ensure that only posts with the tag "featured" are displayed on the page feed.
+
+### image
+The hero image's path.
+
+### page
+(true/false)
+Whether a particular file is a page or a post.
+Pages are ignored when rendering feeds.
+
+### title
+The title (mandatory)
+
+### tags
+Tags for this page/post
+
+## Planned frontmatter properties
+
+### order
+The order in which posts should be shown in the feed
+
+### feed.type
+Determine the type of feed to allow for rendering various types of feeds such as simple lists,
+lists with images, title-only lists, etc.
+
+## Images
+All images referenced in Markdown files must be placed in the "content/assets" folder.
+You can refer to the images in your Markdown using the full path, viz. "assets/xyz.jpg" or relative path,
+viz. "xyz.jpg". next-mark will resolve both correctly.
+
+## Hidden files and folders
+Folders starting with a "." are ignored by next-mark.
+Similarly, files starting with a "_" are also ignored.
+This feature allows you to keep draft folders or files in the same location as the rest of your content.
+
+## Features
+
+You can contribute to this repository by working on any of the below features or create a PR
+for a feature you wish to see.
 
 - [x] Implement pagination of some kind
-- [x] Implement email subscriptions  
+- [x] Implement email subscriptions  e
 - [x] [low priority] Implement breadcrumbs  
 - [x] Fix issue with dark mode having "Sun" as the default icon for some reason  
 - [x] Implement next/seo (especially canonical URLs)
