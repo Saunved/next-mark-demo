@@ -14,8 +14,10 @@ internals in order to have your site up and running. Feel free to open a PR to h
 3. Update blog.config.mjs as per your needs
 4. Update next.config.mjs to set the base URL (you might need to create a .env.production) file at the root level
 5. Set the upstream to this repository to ensure that you pull rendering logic (instructions below)
-6. Connect your site to Vercel via GitHub/GitLab, etc.
-7. Link your own domain and deploy
+6. (Optional) Install dependencies with `npm i`
+7. (Optional) Run the site locally with `npm run dev`
+8. Connect your site to Vercel via GitHub/GitLab, etc.
+9. Link your own domain and deploy
 
 
 ## Setting next-mark as the remote upstream
@@ -25,8 +27,8 @@ git remote -v
 ```
 
 ```sh
-# Set the remote to this repo
-git remote add origin git@github.com:Saunved/next-mark.git
+# Set the upstream remote to this repo
+git remote add upstream git@github.com:Saunved/next-mark.git
 ```
 
 ```sh

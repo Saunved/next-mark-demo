@@ -5,6 +5,10 @@ import blogConfig from "blog.config.mjs";
 export default function EmailCollector({ className = "" }) {
     const [email, setEmail] = useState("")
 
+    if(!blogConfig.buttonDownLink){
+        return null;
+    }
+
     return (
         <section className={className}>
             <form action={blogConfig.buttonDownLink} method="post" target="popupwindow">
