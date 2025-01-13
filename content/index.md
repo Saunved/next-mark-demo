@@ -10,5 +10,5 @@ explorer:
   description: ""
 ---
 
-This is the demo website for the next-mark static site generator.
+This is the demo website for the next-mark blogging setup, built on top of Next.js.
 For the source code and documentation, please refer to the [GitHub link](https://github.com/Saunved/next-mark).
