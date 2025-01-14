@@ -134,6 +134,26 @@ Folders starting with a "." are ignored by next-mark.
 Similarly, files starting with a "_" are also ignored.
 This feature allows you to keep draft folders or files in the same location as the rest of your content.
 
+
+## Adding captions
+You can add captions to images, tables, blockquotes, and code-blocks using the following syntax:
+
+```md
+<!-- Your table -->
+Table: Your caption
+
+<!-- Your code block -->
+Code: Your caption
+
+<!-- Your blockquote -->
+Source: Your caption
+
+<!-- Your image -->
+Figure: Your caption
+```
+
+Check [remark-captions](https://www.npmjs.com/package/remark-captions) for details.
+
 ## Features
 
 You can contribute to this repository by working on any of the below features or create a PR
