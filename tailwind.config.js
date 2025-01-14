@@ -37,6 +37,16 @@ module.exports = {
     },
     extend: {
       typography: {
+        DEFAULT: {
+          css: {
+            'code::before': {
+              content: '""'
+            },
+            'code::after': {
+              content: '""'
+            }
+          }
+        },
         neutral: {
           css: {
             "--tw-prose-body": colors.stone[900],
