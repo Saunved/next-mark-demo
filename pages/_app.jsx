@@ -10,7 +10,6 @@ import 'prismjs/plugins/copy-to-clipboard/prism-copy-to-clipboard';
 import { Inter } from "next/font/google";
 import { ThemeProvider } from "next-themes";
 import Layout from "components/Layout";
-import { Analytics } from '@vercel/analytics/next';
 
 const inter = Inter({
   subsets: ["latin"],
@@ -73,7 +72,6 @@ export default function App(props) {
       <Layout className={inter.className}>
         <Component {...pageProps} />
       </Layout>
-      <Analytics />
     </ThemeProvider>
   );
 }
