@@ -7,7 +7,7 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
-    "new-page": "./new-page.sh"
+    "sync": "git fetch upstream && git merge upstream/main --allow-unrelated-histories"
   },
   "dependencies": {
     "@tailwindcss/typography": "^0.5.8",

@@ -27,21 +27,22 @@ git remote -v
 ```
 
 ```sh
-# Set the upstream remote to this repo
+# Set the upstream remote to this repo (one-time setup)
 git remote add upstream git@github.com:Saunved/next-mark.git
 ```
 
 ```sh
-# To sync upstream changes
-git fetch upstream
-git merge upstream/main --allow-unrelated-histories
+# To sync upstream changes (do this periodically to get the latest changes)
+npm run sync
+
+# Optionally
+npm i # if package.json has been modified
 
 # Then push to your main branch
 ```
 
 # Basics
-next-mark currently only supports Markdown. All Markdown files should be added to a "content" folder in the root
-directory of this project.
+next-mark currently only supports Markdown. All Markdown files should be added to a "content" folder in the root directory of this project.
 
 ## Structure
 You can create as many folders as you want in the "content" directory for organizing your writing.
