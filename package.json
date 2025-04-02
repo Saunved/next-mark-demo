@@ -7,7 +7,8 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
-    "sync": "git fetch upstream && git merge upstream/main --allow-unrelated-histories"
+    "sync": "git fetch upstream && git merge upstream/main --allow-unrelated-histories",
+    "postbuild": "next-sitemap --config next-sitemap.config.mjs"
   },
   "dependencies": {
     "@tailwindcss/typography": "^0.5.8",
@@ -16,6 +17,7 @@
     "gray-matter": "^4.0.3",
     "next": "^14.2.4",
     "next-seo": "^5.15.0",
+    "next-sitemap": "^4.2.3",
     "next-themes": "^0.2.1",
     "phosphor-react": "^1.4.1",
     "prismjs": "^1.29.0",

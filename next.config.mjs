@@ -8,7 +8,7 @@ const getBaseUrl = () => {
     return "http://localhost:3000"
   }
 
-  return process.env.NEXT_PUBLIC_VERCEL_ENV === "production" ? blogConfig.siteUrl : `https://${process.env.NEXT_PUBLIC_VERCEL_URL}`
+  return process.env.NEXT_PUBLIC_VERCEL_ENV === "production" ? blogConfig.siteUrl : `https://${process.env.NEXT_PUBLIC_VERCEL_PROJECT_PRODUCTION_URL}`
 }
 
 /** @type {import('next').NextConfig} */

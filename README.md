@@ -183,7 +183,7 @@ for a feature you wish to see.
 - [ ] Non-image paths (audio/pdf) in assets folder may not get resolved correctly (needs testing)
 - [ ] Add the ability to sort by "order"
 - [ ] Add support for RSS feed
-- [ ] Generate sitemap
+- [x] Generate sitemap
 - [ ] Support YouTube embeds
 - [ ] Default cover image logic should ignore embeds
 - [ ] Make feed type configurable (feed.type) 
