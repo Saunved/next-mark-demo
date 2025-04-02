@@ -4,7 +4,7 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
-    "build": "next build",
+    "build": "next build && next-sitemap --config next-sitemap.config.mjs",
     "start": "next start",
     "lint": "next lint",
     "sync": "git fetch upstream && git merge upstream/main --allow-unrelated-histories",
