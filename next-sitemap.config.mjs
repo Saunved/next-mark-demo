@@ -2,7 +2,7 @@ import {fetchAllPostsMeta} from './lib/indices.mjs';
 
 /** @type {import('next-sitemap').IConfig} */
 export default {
-  siteUrl: process.env.NEXT_PUBLIC_SITE_URL || 'localhost:3000',
+  siteUrl: process.env.NEXT_PUBLIC_SITE_URL || 'http://localhost:3000',
   generateRobotsTxt: true,
   additionalPaths: async () => {
     // You need to generate an array of all your page paths
